@@ -11,11 +11,12 @@ exec("/Users/markdewey/.scripts/open-website.sh", (error, stdout, stderr) => {
   if (stderr) {
       console.log(`stderr: ${stderr}`);
       return;
-  }
-  if (stdout) {
-    console.log(`stdout: ${stdout}`);
-  }
-});
+    }
+    if (stdout) {
+      console.log(`stdout: ${stdout}`);
+    }
+  });
+exec('open -a "Google Chrome.app"')
 
 const startApi = spawn("/Users/markdewey/.scripts/api-reset.sh");
 
@@ -34,3 +35,4 @@ startApi.on('error', (error) => {
 startApi.on("close", code => {
   console.log(`child process exited with code ${code}`);
 });
+
