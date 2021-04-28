@@ -21,15 +21,15 @@ exec('open -a "Google Chrome.app"')
 const startApi = spawn("/Users/markdewey/.scripts/api-reset.sh");
 
 startApi.stdout.on("data", data => {
-  console.log(`stdout: ${data}`);
+  process.stdout.write(`# : ${data}`);
 });
 
 startApi.stderr.on("data", data => {
-  console.log(`stderr: ${data}`);
+  console.log(`***: ${data}`);
 });
 
 startApi.on('error', (error) => {
-  console.log(`error: ${error.message}`);
+  console.log(`**: ${error.message}`);
 });
 
 startApi.on("close", code => {
