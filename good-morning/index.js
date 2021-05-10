@@ -16,6 +16,7 @@ exec("/Users/markdewey/.scripts/open-website.sh", (error, stdout, stderr) => {
       console.log(`stdout: ${stdout}`);
     }
   });
+exec('/Users/markdewey/.scripts/build-website.sh')
 exec('open -a "Google Chrome.app"')
 
 const startApi = spawn("/Users/markdewey/.scripts/api-reset.sh");
